@@ -20,4 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  document.querySelectorAll(".circle-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".schedule-card");
+      if (!card) return;
+
+      const title = card.querySelector(".item-title");
+      const isDone = button.classList.toggle("done");
+      card.classList.toggle("active", isDone);
+      if (title) {
+        title.classList.toggle("done", isDone);
+      }
+
+      if (isDone) {
+        button.innerHTML = "<span>✓</span>";
+      } else {
+        button.innerHTML = "";
+      }
+    });
+  });
 });
