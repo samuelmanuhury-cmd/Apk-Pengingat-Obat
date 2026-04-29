@@ -40,4 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const bellButton = document.querySelector(".bell-button");
+  if (bellButton) {
+    bellButton.addEventListener("click", () => {
+      alert("Anda memiliki 3 notifikasi baru!");
+    });
+  }
 });
