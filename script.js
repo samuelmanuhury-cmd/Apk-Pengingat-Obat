@@ -1,50 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const navButtons = document.querySelectorAll(".bottom-nav .nav-item");
-  const views = document.querySelectorAll(".view");
-  const sectionTitle = document.querySelector(".subtitle");
+// Splash screen delay
+setTimeout(() => {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("app").classList.remove("hidden");
+}, 2500);
 
-  const viewTitles = {
-    today: "Pengingat Obat",
-    medications: "Daftar Obat",
-    history: "Riwayat"
-  };
+// Data obat
+let daftarObat = [];
 
-  navButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetView = button.dataset.view;
-      navButtons.forEach((item) => item.classList.toggle("active", item === button));
-      views.forEach((view) => view.classList.toggle("active", view.dataset.view === targetView));
+function tambahObat() {
+  let nama = prompt("Masukkan nama obat:");
+  let jam = prompt("Masukkan jam minum (contoh: 08:00)");
 
-      if (sectionTitle && viewTitles[targetView]) {
-        sectionTitle.textContent = viewTitles[targetView];
-      }
-    });
-  });
-
-  document.querySelectorAll(".circle-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest(".schedule-card");
-      if (!card) return;
-
-      const title = card.querySelector(".item-title");
-      const isDone = button.classList.toggle("done");
-      card.classList.toggle("active", isDone);
-      if (title) {
-        title.classList.toggle("done", isDone);
-      }
-
-      if (isDone) {
-        button.innerHTML = "<span>✓</span>";
-      } else {
-        button.innerHTML = "";
-      }
-    });
-  });
-
-  const bellButton = document.querySelector(".bell-button");
-  if (bellButton) {
-    bellButton.addEventListener("click", () => {
-      alert("Anda memiliki 3 notifikasi baru!");
-    });
+  if (nama && jam) {
+    daftarObat.push({ nama, jam });
+    render();
   }
-});
+}
+
+function render() {
+  let list = document.getElementById("list-obat");
+  list.innerHTML = "";
+
+  daftarObat.forEach((obat, index) => {
+    let li = document.createElement("li");
+    li.innerHTML = `
+      ${obat.nama} - ${obat.jam}
+      <button onclick="hapus(${index})">❌</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function hapus(index) {
+  daftarObat.splice(index, 1);
+  render();
+}

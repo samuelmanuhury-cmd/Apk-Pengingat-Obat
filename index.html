@@ -1,216 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pengingat Obat</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="device-frame">
-  <main class="app-shell">
-    <div class="view active" data-view="today">
-      <section class="top-panel">
-        <div class="top-left">
-          <div class="status-dot"></div>
-          <div>
-            <p class="subtitle">Pengingat Obat</p>
-            <p class="date">Selasa, 22 April 2026</p>
-          </div>
-        </div>
-        <button class="bell-button" aria-label="Notifikasi">
-          <span class="bell-icon">🔔</span>
-          <span class="badge">3</span>
-        </button>
-      </section>
 
-      <section class="card progress-card">
-        <div class="card-title">
-          <div>
-            <p class="card-label">Progress Hari Ini</p>
-            <p class="card-subtitle">2/5</p>
-          </div>
-          <span class="small-chip">Sedang</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 42%"></div>
-        </div>
-        <p class="progress-note">3 obat lagi untuk hari ini</p>
-      </section>
-
-      <section class="section-block">
-        <h2>Jadwal Hari Ini</h2>
-        <div class="schedule-list">
-          <article class="schedule-card active">
-            <div class="pill-icon pill-pink">💊</div>
-            <div class="schedule-text">
-              <p class="item-title done">Paracetamol</p>
-              <p class="item-detail">08:00 • 500mg</p>
-            </div>
-            <button class="circle-toggle done"><span>✓</span></button>
-          </article>
-
-          <article class="schedule-card active">
-            <div class="pill-icon pill-orange">🍊</div>
-            <div class="schedule-text">
-              <p class="item-title done">Vitamin C</p>
-              <p class="item-detail">08:00 • 1000mg</p>
-            </div>
-            <button class="circle-toggle done"><span>✓</span></button>
-          </article>
-
-          <article class="schedule-card">
-            <div class="pill-icon pill-blue">💊</div>
-            <div class="schedule-text">
-              <p class="item-title">Amoxicillin</p>
-              <p class="item-detail">14:00 • 250mg</p>
-            </div>
-            <button class="circle-toggle"></button>
-          </article>
-
-          <article class="schedule-card">
-            <div class="pill-icon pill-pink">💊</div>
-            <div class="schedule-text">
-              <p class="item-title">Paracetamol</p>
-              <p class="item-detail">20:00 • 500mg</p>
-            </div>
-            <button class="circle-toggle"></button>
-          </article>
-
-          <article class="schedule-card">
-            <div class="pill-icon pill-blue">💊</div>
-            <div class="schedule-text">
-              <p class="item-title">Antibiotik</p>
-              <p class="item-detail">22:00 • 250mg</p>
-            </div>
-            <button class="circle-toggle"></button>
-          </article>
-        </div>
-      </section>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="logo-box">
+      <h1>💊</h1>
+      <h2>ObatCare</h2>
+      <p>Pengingat Minum Obat</p>
     </div>
-
-    <div class="view" data-view="medications">
-      <section class="top-panel">
-        <div class="top-left">
-          <div class="status-dot"></div>
-          <div>
-            <p class="subtitle">Daftar Obat</p>
-            <p class="date">Selasa, 22 April 2026</p>
-          </div>
-        </div>
-        <button class="bell-button" aria-label="Notifikasi">
-          <span class="bell-icon">🔔</span>
-          <span class="badge">3</span>
-        </button>
-      </section>
-
-      <section class="section-block">
-        <h2>Obat Saya</h2>
-        <div class="medication-list">
-          <article class="medication-card">
-            <div class="pill-icon pill-pink">💊</div>
-            <div class="medication-text">
-              <p class="item-title">Paracetamol</p>
-              <p class="item-detail">500mg • 3x sehari</p>
-            </div>
-          </article>
-
-          <article class="medication-card">
-            <div class="pill-icon pill-orange">🍊</div>
-            <div class="medication-text">
-              <p class="item-title">Vitamin C</p>
-              <p class="item-detail">1000mg • 1x sehari</p>
-            </div>
-          </article>
-
-          <article class="medication-card">
-            <div class="pill-icon pill-blue">💊</div>
-            <div class="medication-text">
-              <p class="item-title">Amoxicillin</p>
-              <p class="item-detail">250mg • 3x sehari</p>
-            </div>
-          </article>
-
-          <article class="medication-card">
-            <div class="pill-icon pill-green">💊</div>
-            <div class="medication-text">
-              <p class="item-title">Ibuprofen</p>
-              <p class="item-detail">400mg • 2x sehari</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </div>
-
-    <div class="view" data-view="history">
-      <section class="top-panel">
-        <div class="top-left">
-          <div class="status-dot"></div>
-          <div>
-            <p class="subtitle">Riwayat</p>
-            <p class="date">Selasa, 22 April 2026</p>
-          </div>
-        </div>
-        <button class="bell-button" aria-label="Notifikasi">
-          <span class="bell-icon">🔔</span>
-          <span class="badge">3</span>
-        </button>
-      </section>
-
-      <section class="section-block">
-        <h2>Riwayat Pengambilan</h2>
-        <div class="history-list">
-          <article class="history-card">
-            <div class="history-icon">✅</div>
-            <div class="history-text">
-              <p class="item-title">Paracetamol</p>
-              <p class="item-detail">08:00 • 22 Apr 2026</p>
-            </div>
-          </article>
-
-          <article class="history-card">
-            <div class="history-icon">✅</div>
-            <div class="history-text">
-              <p class="item-title">Vitamin C</p>
-              <p class="item-detail">08:00 • 22 Apr 2026</p>
-            </div>
-          </article>
-
-          <article class="history-card">
-            <div class="history-icon">⏰</div>
-            <div class="history-text">
-              <p class="item-title">Amoxicillin</p>
-              <p class="item-detail">14:00 • 22 Apr 2026</p>
-            </div>
-          </article>
-
-          <article class="history-card">
-            <div class="history-icon">✅</div>
-            <div class="history-text">
-              <p class="item-title">Paracetamol</p>
-              <p class="item-detail">20:00 • 21 Apr 2026</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <nav class="bottom-nav">
-    <button class="nav-item active" data-view="today">
-      <span>📅</span>
-      <span>Hari Ini</span>
-    </button>
-    <button class="nav-item" data-view="medications">
-      <span>💊</span>
-      <span>Obat</span>
-    </button>
-    <button class="nav-item" data-view="history">
-      <span>⏱️</span>
-      <span>Riwayat</span>
-    </button>
-  </nav>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Main App -->
+  <div id="app" class="hidden">
+    <header>
+      <h2>Halo, Gustaf M</h2>
+      <input type="text" placeholder="Cari obat...">
+    </header>
+
+    <section class="card">
+      <h3>Daftar Obat Hari Ini</h3>
+      <ul id="list-obat"></ul>
+      <button onclick="tambahObat()">+ Tambah Obat</button>
+    </section>
+
+    <nav>
+      <button>🏠</button>
+      <button>💊</button>
+      <button>📊</button>
+      <button>👤</button>
+    </nav>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
